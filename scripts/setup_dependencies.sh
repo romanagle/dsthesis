@@ -21,6 +21,7 @@ if [[ ! -d "$INFERNAL_SRC_DIR" ]]; then
   if [[ "$USE_HOMEBREW_INFERNAL" == "1" ]]; then
     if command -v brew >/dev/null 2>&1; then
       echo "Installing Infernal via Homebrew..."
+      brew tap brewsci/bio
       brew install infernal
     else
       echo "Homebrew not found. Install it or set INFERNAL_SRC_DIR." >&2
