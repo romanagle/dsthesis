@@ -2,27 +2,21 @@
 set -euo pipefail
 
 # Build and install Infernal (cmsearch/cmscan) and tRNAscan-SE from source.
-# Assumes you already have the source tarballs checked out or downloaded.
+# Assumes you already have the source directories unpacked.
 
 PREFIX="${PREFIX:-$HOME/.local}"
 NPROC="${NPROC:-1}"
 
-INFERNAL_TARBALL="${INFERNAL_TARBALL:-infernal-1.1.2.tar.gz}"
 INFERNAL_SRC_DIR="${INFERNAL_SRC_DIR:-infernal-1.1.2}"
 TRNASCAN_SRC_DIR="${TRNASCAN_SRC_DIR:-tRNAscan-SE-master}"
 
 echo "Using PREFIX=$PREFIX"
-echo "Using INFERNAL_TARBALL=$INFERNAL_TARBALL"
 echo "Using INFERNAL_SRC_DIR=$INFERNAL_SRC_DIR"
 echo "Using TRNASCAN_SRC_DIR=$TRNASCAN_SRC_DIR"
 
 if [[ ! -d "$INFERNAL_SRC_DIR" ]]; then
-  if [[ -f "$INFERNAL_TARBALL" ]]; then
-    tar -xzf "$INFERNAL_TARBALL"
-  else
-    echo "Missing Infernal source. Set INFERNAL_SRC_DIR or INFERNAL_TARBALL." >&2
-    exit 1
-  fi
+  echo "Missing Infernal source dir: $INFERNAL_SRC_DIR" >&2
+  exit 1
 fi
 
 echo "Building Infernal..."
