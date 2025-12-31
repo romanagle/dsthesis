@@ -14,14 +14,6 @@ venv/
 # OS
 .DS_Store
 
-# Data (do not commit)
-data/raw/
-data/interim/
-data/processed/
-
-# Run artifacts (usually big/noisy)
-results/runs/
-
 # Logs
 *.log
 
