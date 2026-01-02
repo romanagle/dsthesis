@@ -1,0 +1,600 @@
+C000001|AE000657|Aquificota|Aquifex.trna1 (11-102)	Length: 92 bp
+Type: Ser	Anticodon: GGA at 35-37 (45-47)	Score: 91.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GGAAGGGTGGCCGAGCGGTcgAAGGCGCGGCGCTGGAAACGCCGTGTACCCCGTTTGGGGTACCGAGGGTTCGAATCCCTCCCCTTCCGCCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>>....<<<<<<<.>>>>>.......<<<<<<<<<<<<....
+
+C000002|AE000657|Aquificota|Aquifex.trna1 (11-98)	Length: 88 bp
+Type: Leu	Anticodon: GAG at 35-37 (45-47)	Score: 68.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GCCGGAGTGGCGGAACTGGCaGACGCGCCGTCTTGAGGGGACGGTGCCCTTTAcGGGCGTGCGGGTTCGACTCCCGCCTCCGGCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>.....<<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000003|AE000657|Aquificota|Aquifex.trna1 (11-85)	Length: 75 bp
+Type: Gly	Anticodon: GCC at 33-35 (43-45)	Score: 89.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GCGGGCGTAGCTCAGTGGTAGAGCGGCTGCTTGCCATGCAGCAGGtCGCGGGTTCGAGTCCCGTCGCCCGCTCCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000004|AE000657|Aquificota|Aquifex.trna1 (11-85)	Length: 75 bp
+Type: Cys	Anticodon: GCA at 33-35 (43-45)	Score: 74.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGCGACGTGGCCGAGCGGTTAGGCGGGGGACTGCAAATCCCCTTTaCGGCGGTTCGAATCCGCCCGTCGCCTCCA
+Str: >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000005|AE000657|Aquificota|Aquifex.trna1 (11-87)	Length: 77 bp
+Type: Met	Anticodon: CAT at 35-37 (45-47)	Score: 79.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GGCGGCGTAGCTCAGCTGGTcAGAGCGGGGATCTCATAAGTCCCAGGtCGGAGGTTCGAGTCCTCCCGCCGCCACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000006|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Pro	Anticodon: GGG at 34-36 (44-46)	Score: 76.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: CGGGGTGTAGCGCAGGTGGTAGCGCGCTGGCATGGGGGGCCAGAGGtCGCCGGTTCGAGTCCGGTCACCCCGACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000007|AE000657|Aquificota|Aquifex.trna1 (11-109)	Length: 99 bp
+Type: SeC	Anticodon: TCA at 36-38 (46-48)	Score: 118.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *   
+Seq: GGGAGAGGTTGGCcGGCTGGTGCCGCCCCGGGACTTCAAATCCCGTGGgAGgTCCCGCAAGGGAgCTCCGGAGGGTTCGATTCCCTCCCTCTCCCGCCA
+Str: >>>>>>>>..>>>.>>>....<<<<<<.>>>>>.......<<<<<.>>.>>.>>>>....<<<<.<<<<.>>>>>.......<<<<<<<<<<<<<....
+
+C000008|AE000657|Aquificota|Aquifex.trna1 (11-87)	Length: 77 bp
+Type: fMet	Anticodon: CAT at 35-37 (45-47)	Score: 84.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: CGCGGGGTGGAGCAGCCtGGTAGCTCGCCGGGCTCATAACCCGGAGGtCGCGGGTTCAAATCCCGCCCCCGCAACCA
+Str: .>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<.....
+
+C000009|AE000657|Aquificota|Aquifex.trna1 (11-100)	Length: 90 bp
+Type: Ser	Anticodon: CGA at 35-37 (45-47)	Score: 79.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    
+Seq: GACGGGGTGGCCGAGCGGAcgAAGGCGGGGGACTCGAAATCCCTTGGCGGGTTACCaGCCCGCCCGTGGGTTCGAATCCCACCCCCGTCG
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>>.....<<<<<<<.>>>>>.......<<<<<<<<<<<<.
+
+C000010|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Asn	Anticodon: GTT at 34-36 (44-46)	Score: 79.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: TCCGGGGTAGCTCAATCGGCAGAGCGGGTGGCTGTTAACCACCTGGtTGGGGGTTCGAGTCCCTCCCCCGGAGCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000011|AE000657|Aquificota|Aquifex.trna1 (11-84)	Length: 74 bp
+Type: Ile	Anticodon: GAT at 35-37 (45-47)	Score: 76.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGGCCTCTAGCTCAGCTGGTtAGAGCGTGCCCCTGATAAGGGCAAGGtCCCAGGTTCGAGTCCTGGGAGGCCCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000012|AE000657|Aquificota|Aquifex.trna1 (11-83)	Length: 73 bp
+Type: Ala	Anticodon: TGC at 34-36 (44-46)	Score: 86.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGGGGTGTAGCTCAGCTGGGAGAGCGCCTGCTTTGCAAGCAGGAGGtCGTGGGTTCGAGTCCCACCACCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000013|AE000657|Aquificota|Aquifex.trna1 (11-87)	Length: 77 bp
+Type: Arg	Anticodon: TCT at 35-37 (45-47)	Score: 88.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GGGCCCGTAGCTCAGTTGGAtAGAGCAGGGGATTTCTAATCCCCAGGtCGGGGGTTCGAGTCCCTCCGGGCCCACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000014|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: His	Anticodon: GTG at 34-36 (44-46)	Score: 82.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GAGGGTGTAGCTCAGTTGGTAGAGCGGGGGACTGTGGATCCCCGTGtCGCGGGTTCGAGTCCCGTCACCCTCCCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000015|AE000657|Aquificota|Aquifex.trna1 (11-83)	Length: 73 bp
+Type: Thr	Anticodon: TGT at 34-36 (44-46)	Score: 82.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCTGGCGTAGCTCAGTCGGCAGAGCGCGGGATTTGTAATCCCGTGGgCGCGGGTTCGAGTCCCGCCGCCAGCT
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000016|AE000657|Aquificota|Aquifex.trna1 (11-95)	Length: 85 bp
+Type: Tyr	Anticodon: GTA at 35-37 (45-47)	Score: 79.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGAGGGGTGGCCGAGCGGCcaAAGGCAGGGGACTGTAAATCCCCCGGGCGTCCGCCCTgCGCAGGTTCGAATCCTGCCCCCTCCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>....<<<<...>>>>>.......<<<<<<<<<<<<.
+
+C000017|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Gly	Anticodon: TCC at 34-36 (44-46)	Score: 96.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCGGGCGTAGCTCAGTTGGTAGAGCAGCGGCCTTCCAAGCCGCAGGtCGCGGGTTCGAGTCCCGTCGCCCGCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000018|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Thr	Anticodon: GGT at 34-36 (44-46)	Score: 86.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCCCAGGTAGCTCAGTCGGTAGAGCGCACCCTTGGTAAGGGTGAGGgCGCCGGTTCGAGTCCGGTCCTGGGCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000019|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Trp	Anticodon: CCA at 34-36 (44-46)	Score: 89.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGGCTGTAGCTCAATTGGCAGAGCGCGGGACTCCAAATCCCGTGGgTGGGGGTTCGAGTCCTCCCAGCCCCGCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000020|AE000657|Aquificota|Aquifex.trna1 (11-83)	Length: 73 bp
+Type: Pro	Anticodon: TGG at 34-36 (44-46)	Score: 79.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: CGGGGCGTAGCTCAGGTGGTAGAGCGTCGGCTTTGGGAGCCGAAGGtCGCCGGTTCAAGTCCGGCCGCCCCGA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000021|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Ala	Anticodon: GGC at 34-36 (44-46)	Score: 73.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGGCGGTAGCTCAGCTGGGAGAGCGCCGATATGGCATGTCGGAGGtCGGGGGTTCGAGTCCCCTCCGCTCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000022|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Lys	Anticodon: TTT at 34-36 (44-46)	Score: 97.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GAGCCGGTAGCTCAGTTGGTAGAGCAACGGCCTTTTAAGCCGTGGGtCGCGGGTTCGAGTCCCGCCCGGCTCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000023|AE000657|Aquificota|Aquifex.trna1 (11-88)	Length: 78 bp
+Type: Glu	Anticodon: TTC at 37-39 (47-49)	Score: 72.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GCCCCCGTCGTCTAGCCtGGCctAGGACGCCGGCCTTTCACGCCGGAAaCGCGGGTTCAAATCCCGCCGGGGGTGCCA
+Str: >>>>>>>..>>>>...........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<....
+
+C000024|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Val	Anticodon: TAC at 34-36 (44-46)	Score: 94.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: AGGCGGGTAGCTCAGTTGGGAGAGCGCCGCCCTTACAAGGCGGAGGtCGCGGGTTCGAGTCCCGCCCCGCCTACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000025|AE000657|Aquificota|Aquifex.trna1 (11-88)	Length: 78 bp
+Type: Asp	Anticodon: GTC at 36-38 (46-48)	Score: 93.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GGAGCGGTAGTTCAGCCcGGTcAGAACGCCGGCCTGTCAAGCCGGAGGtCGCGGGTTCAAATCCCGTCCGCTCCGCCA
+Str: >>>>>>>..>>>>..........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000026|AE000657|Aquificota|Aquifex.trna1 (11-87)	Length: 77 bp
+Type: Arg	Anticodon: ACG at 35-37 (45-47)	Score: 82.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: CGGGCTGTAGCTCAACTGGAtAGAGCGCGGGACTACGGATCCCGAGGtTGCGGGTTCGACTCCCGCCAGCCCGGCCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000027|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Lys	Anticodon: CTT at 34-36 (44-46)	Score: 80.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGCTGCTAGCTCAATAGGCAGAGCGGCGGACTCTTAATCCGCAGGtTCCGGGTTCGAGTCCCGGGCAGCCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000028|AE000657|Aquificota|Aquifex.trna1 (11-103)	Length: 93 bp
+Type: Ser	Anticodon: TGA at 35-37 (45-47)	Score: 90.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGAGGGGTGGCCGAGCGGAcgAAGGCGGGGGATTTGAAATCCCTTGGCGGGTTACAgGCCCGCCCGTGGGTTCGAATCCCACCCCCTCCGCCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>>.....<<<<<<<.>>>>>.......<<<<<<<<<<<<....
+
+C000029|AE000657|Aquificota|Aquifex.trna1 (11-83)	Length: 73 bp
+Type: Pro	Anticodon: CGG at 34-36 (44-46)	Score: 78.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: CGGGGCGTAGCGCAGGTGGTAGCGCGCTGGCTTCGGGAGCCAGAGGtCGCCGGTTCGAGTCCGGTCGCCCCGA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000030|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Gln	Anticodon: TTG at 34-36 (44-46)	Score: 84.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: TGGGGCGTAGCTCAACTGGCAGAGCACCGGACTTTGGATCCGGGGGtTCCAGGTTCGAGTCCTGGCGCCCCAGCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000031|AE000657|Aquificota|Aquifex.trna1 (11-97)	Length: 87 bp
+Type: Leu	Anticodon: TAG at 35-37 (45-47)	Score: 87.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GCGGGTGTGGCGGAACTGGCaGACGCGCCGGACTTAGGATCCGGTGCCCGTAAGGGCGTGCGGGTTCGACTCCCGCCACCCGCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>....<<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000032|AE000657|Aquificota|Aquifex.trna1 (11-97)	Length: 87 bp
+Type: Leu	Anticodon: CAG at 35-37 (45-47)	Score: 85.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GCGGGTGTGGCGGAACTGGCaGACGCGCCGGACTCAGGATCCGGTGCCCGCAAGGGCGTGCGGGTTCGACTCCCGCCACCCGCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>....<<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000033|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Ile2	Anticodon: CAT at 34-36 (44-46)	Score: 82.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGCGCGTAGCTCAATTGGCAGAGCGGGCGGCTCATAACCGCCCGGtTGGGGGTTCGAGTCCTCCCGCGCCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000034|AE000657|Aquificota|Aquifex.trna1 (11-98)	Length: 88 bp
+Type: Leu	Anticodon: CAA at 35-37 (45-47)	Score: 77.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GCCGGTGTGGCGGAACTGGCaGACGCGGGGGATTCAAAATCCCCTGCCCTTCAcGGGCGTGCGGGTTCGACTCCCGCCACCGGCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>.....<<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000035|AE000657|Aquificota|Aquifex.trna1 (11-102)	Length: 92 bp
+Type: Ser	Anticodon: GCT at 35-37 (45-47)	Score: 87.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GGAGGGGTGGCCGAGAGGCcgAAGGCGGCCGCTTGCTAAGCGGCAGAGGGGCTAAAACCCCTCCGAGGGTTCGAATCCCTCCCCCTCCGCCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>......<<<<<<.>>>>>.......<<<<<<<<<<<<....
+
+C000036|AE000657|Aquificota|Aquifex.trna1 (11-84)	Length: 74 bp
+Type: Arg	Anticodon: CCG at 35-37 (45-47)	Score: 73.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GTGCCCGTAGCTCAGGTGGAcAGAGCACGGGGCTCCGGACCCCGGGGtCGCGGGTTCAAGTCCCGCCGGGCACA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000037|AE000657|Aquificota|Aquifex.trna1 (11-98)	Length: 88 bp
+Type: Leu	Anticodon: TAA at 35-37 (45-47)	Score: 82.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GGGGGTGTGGCGGAATTGGCaGACGCGGGGGACTTAAAATCCCCTGGGCGAAaAGCCCGTGAGGGTTCGACTCCCTCCACCCCCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>.....<<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000038|AE000657|Aquificota|Aquifex.trna1 (11-84)	Length: 74 bp
+Type: Ile	Anticodon: GAT at 35-37 (45-47)	Score: 76.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGGCCTCTAGCTCAGCTGGTtAGAGCGTGCCCCTGATAAGGGCAAGGtCCCAGGTTCGAGTCCTGGGAGGCCCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000039|AE000657|Aquificota|Aquifex.trna1 (11-83)	Length: 73 bp
+Type: Ala	Anticodon: TGC at 34-36 (44-46)	Score: 86.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGGGGTGTAGCTCAGCTGGGAGAGCGCCTGCTTTGCAAGCAGGAGGtCGTGGGTTCGAGTCCCACCACCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000040|AE000657|Aquificota|Aquifex.trna1 (11-86)	Length: 76 bp
+Type: Phe	Anticodon: GAA at 34-36 (44-46)	Score: 81.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGCCCGGTAGCTCAGGTGGTAGAGCACCCGGCTGAAAACCGGGGTGtCGGCGGTTCGACTCCGCCCTGGGCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000041|AE000657|Aquificota|Aquifex.trna1 (11-87)	Length: 77 bp
+Type: Arg	Anticodon: CCT at 35-37 (45-47)	Score: 82.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GTGCCCGTAGCTCAGGCGGAtAGAGCGCGAGATTCCTAATCTCGAGGtCGCGGGTTCGAGTCCCGCCGGGCACACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000042|AE000657|Aquificota|Aquifex.trna1 (11-82)	Length: 72 bp
+Type: Thr	Anticodon: CGT at 33-35 (43-45)	Score: 83.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GCCGGCGTAGCTCAGCGGTAGAGCGCGGGCTTCGTAAGCCTGAGGtCGTGGGTTCGAATCCCACCGCCGGCT
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000043|AE000657|Aquificota|Aquifex.trna1 (11-85)	Length: 75 bp
+Type: Gly	Anticodon: CCC at 33-35 (43-45)	Score: 79.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GCGGGCGTAGCTCAGAGGTAGAGCACCTGCTTCCCAAGCAGGAGGtCGCCGGTTCGAGTCCCGTCGCCCGCTCCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>.>>.......<<.<<<<<<<<<....
+
+C000044|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Ile	Anticodon: GAT at 35-37 (45-47)	Score: 75.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGGCGTATAGCTCAGGCGGTtAGAGCGCTTCGCTGATAACGAAGAGGtCCCAGGTTCAAGTCCTGGTACGCCCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000045|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Ala	Anticodon: TGC at 34-36 (44-46)	Score: 85.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGGGCATGGCGCAATTGGTAGCGCACCTGCTTTGCAAGCAGGGGGtTCGGGGTTCGAGTCCCCGTGCCTCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000046|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-93)	Length: 83 bp
+Type: Leu	Anticodon: CAG at 34-36 (44-46)	Score: 67.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCGCGAGTGGCGGAACGGCaGACGCGCTGGCTTCAGGTGCCAGTATCCGAAAGGGTgTGGGGGTTCAAATCCCCCCTCGCGCA
+Str: >>>>>>>..>>>..........<<<.>>>>>.......<<<<<..>>>....<<<...>>>>>.......<<<<<<<<<<<<.
+
+C000047|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Lys	Anticodon: TTT at 34-36 (44-46)	Score: 80.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGGCCTTTAGCTCAGTTGGTAGAGCATCGGACTTTTAATCCGTGGGtCGTGGGTTCGATCCCCACAGGGCCCA
+Str: >>>>>>>..>>>>........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.
+
+C000048|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Glu	Anticodon: TTC at 35-37 (45-47)	Score: 66.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCCCCCATCGTCTAGCGGCctAGGACACCGCCCTTTCACGGCGGCGGCACGGGTTCGAATCCCGTTGGGGGTA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+
+C000049|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Asp	Anticodon: GTC at 35-37 (45-47)	Score: 81.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGCCCTGTAGCGCAGTTGGTtAGCGCGCCGCCCTGTCACGGCGGAGGtCGCGGGTTCAAGTCCCGTCAGGGTCG
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000050|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-95)	Length: 85 bp
+Type: Ser	Anticodon: GGA at 35-37 (45-47)	Score: 61.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGAGAATTCGCCTAGCGGCctATGGCGCACGCCTGGAACGCGTGTTGGGTTAACGCCCTCGGGGGTTCAAATCCCCCATTCTCCG
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<..>>>>....<<<<..>>>>>.......<<<<<<<<<<<<.
+
+C000051|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-87)	Length: 77 bp
+Type: Thr	Anticodon: TGT at 35-37 (45-47)	Score: 86.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GCCTCCTTAGCTCAGTTGGCcAGAGCACCGCTCTTGTAAAGCGGGGGtCGTCGGTTCGAATCCGACAGGGGGCTCCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000052|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Leu	Anticodon: TAA at 35-37 (45-47)	Score: 74.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GCCCCAGTAGCCCAATTGGCaGAGGCAGCGGACTTAAAATCCGCGTGtTGTGGGTTCGAGTCCCACCTGGGGCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000053|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-82)	Length: 72 bp
+Type: Gln	Anticodon: TTG at 33-35 (43-45)	Score: 55.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: TCCGCTCTGGTGTAATGGCAGCACCCCGGCCTTTGGAGCCGTGGAgTATAGGTTCGAATCCTATGGGCGGAA
+Str: >>>>>>>..>>>>.......<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.
+
+C000054|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Asn	Anticodon: GTT at 34-36 (44-46)	Score: 70.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: TCCTCCGTAGCTCAATTGGCAGAGCATTCGACTGTTAATCGAAGGGtTACTGGTTCAAGTCCAGTCGGAGGAG
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000055|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Asn	Anticodon: GTT at 34-36 (44-46)	Score: 70.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: TCCTCCGTAGCTCAATTGGCAGAGCATTCGACTGTTAATCGAAGGGtTACTGGTTCAAGTCCAGTCGGAGGAG
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000056|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Ile2	Anticodon: CAT at 35-37 (45-47)	Score: 68.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGGGCTATAGCTCAGCTGGTtAGAGCGCGGGACTCATAATCCTAAGGtCCTCGGTTCAAGTCCGAGTAGCCCTA
+Str: >>>>>>>..>>>>.........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.
+
+C000057|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-87)	Length: 77 bp
+Type: Pro	Anticodon: GGG at 35-37 (45-47)	Score: 79.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: CGGGCTGTAGCGCAGCTtGGTAGCGCACTTGACTGGGGGTCAAGGGGtCGCAGGTTCAAATCCTGTCAGCCCGACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000058|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-85)	Length: 75 bp
+Type: Val	Anticodon: CAC at 33-35 (43-45)	Score: 81.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGGCGATTGGCGCAGTGGTAGCGCGCTTCGTTCACACCGAAGAGGtCACTGGTTCGAACCCAGTATCGCCCACCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000059|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-92)	Length: 82 bp
+Type: Leu	Anticodon: CAA at 35-37 (45-47)	Score: 73.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GCCCGAGTGGCGGAATTGGCaGACGCGCTGCACTCAAAATGCAGTATCGAAAGGTGTGTGGGTTCGAGTCCCACCTCGGGCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.
+
+C000060|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Gly	Anticodon: TCC at 33-35 (43-45)	Score: 81.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGGGACGTAGCTTAATGGTAAAGCCTCAGTCTTCCAAACTGATTaCGCGGGTTCGATTCCCGTCGTCCCCTCCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<....
+
+C000061|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: His	Anticodon: GTG at 34-36 (44-46)	Score: 69.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GTGGGCTTAGCTCAGTTGGCAGAGCGCCTGGTTGTGGTCCAGGAGGtCGCGGGTTCAACCCCCGTAGCTCACCCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000062|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Lys	Anticodon: CTT at 34-36 (44-46)	Score: 81.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCACCTCTAGCTCAACTGGCAGAGCAATTGACTCTTAATCAATGGGtTCCGGGTTCGAGTCCCGGGGGGTGCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000063|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Lys	Anticodon: CTT at 34-36 (44-46)	Score: 81.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCACCTCTAGCTCAACTGGCAGAGCAATTGACTCTTAATCAATGGGtTCCGGGTTCGAGTCCCGGGGGGTGCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000064|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-92)	Length: 82 bp
+Type: Leu	Anticodon: TAG at 35-37 (45-47)	Score: 58.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GCGCGAGTGGTGAAATTGGCaGACACGCAGGATTTAGGTTCCTGTGCCTTCGGGCGTGGGGGTTCAAGTCCCCCCTTGCGCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.
+
+C000065|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Arg	Anticodon: CCG at 34-36 (44-46)	Score: 75.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCCCTCGTAGCTCAGGGGAtAGAGCGTCTGCCTCCGGAGCAGAAGGcCGTAGGTTCGAATCCTATCGAGGGCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000066|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-87)	Length: 77 bp
+Type: Pro	Anticodon: CGG at 35-37 (45-47)	Score: 82.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: CGGGATGTAGCGCAGCTtGGTAGCGCGCTTCGTTCGGGACGAAGAGGtCGCAGGTTCAAATCCTGTCATCCCGACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000067|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Gly	Anticodon: CCC at 33-35 (43-45)	Score: 77.5
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GCGGGCGTAGCTCAATGGTAGAGCGCTAGCTTCCCAAGCTCGATaCGCGGGTTCGATTCCCGTCGCCCGCTCCA
+Str: >>>>>>>..>>>>.......<<<<.>.>>>.......<<<.<....>>>>>.......<<<<<<<<<<<<....
+
+C000068|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-93)	Length: 83 bp
+Type: Leu	Anticodon: GAG at 34-36 (44-46)	Score: 61.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCGCGGGTGGCGGAATGGCaGACGCGCTAGCTTGAGGTGCTAGTCCTCGAAAGGGGGTGGGGGTTCAAGTCCCCCTCCGCGCA
+Str: >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>>....<<<<..>>>>>.......<<<<<<<<<<<<.
+
+C000069|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-92)	Length: 82 bp
+Type: Tyr	Anticodon: GTA at 35-37 (45-47)	Score: 67.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: GGCAGATTACCCGAGCGGCcaAAGGGGGCTGACTGTAAATCAGCTGGCAACGCCTaCGGGGGTTCGAATCCCTCATCTGCCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>...<<<...>>>>>.......<<<<<<<<<<<<.
+
+C000070|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Met	Anticodon: CAT at 35-37 (45-47)	Score: 69.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GGCGGTGTAGCTCAGTTGGTtAGAGCGCACGACTCATAATCGTGAGGtCGGGAGATCGAGCCTCCCCACCGCTA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000071|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Trp	Anticodon: CCA at 34-36 (44-46)	Score: 77.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: AGGGTAGTGGCGCAATTGGTAGCGCAGCGGTCTCCAAAACCGCAGGtTGCAGGTTCGAGTCCTGTCTGCCCTG
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000072|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Ala	Anticodon: CGC at 34-36 (44-46)	Score: 76.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGGGCTATAGCTCAGTTGGTAGAGCGCTTCGTTCGCATCGAAGAGGtCAGGAGTTCGAATCTCCTTAGCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000073|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: fMet	Anticodon: CAT at 35-37 (45-47)	Score: 76.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: CGCGGGGTGGAGCAGTTcGGTAGCTCGCTGGGCTCATAACCCAGAGGtCACAGGTTCAAATCCTGTCCCCGCAA
+Str: .>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<..
+
+C000074|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: fMet	Anticodon: CAT at 35-37 (45-47)	Score: 76.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: CGCGGGGTGGAGCAGTTcGGTAGCTCGCTGGGCTCATAACCCAGAGGtCACAGGTTCAAATCCTGTCCCCGCAA
+Str: .>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<..
+
+C000075|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-82)	Length: 72 bp
+Type: Gln	Anticodon: CTG at 34-36 (44-46)	Score: 49.1
+         *    |    *    |    *    |    *    |    *    |    *    |    *    | 
+Seq: TGGGATATGGTGTAATTGGCAACACTACGGTTTCTGGTACCGTCAtTCTAGGTTCGAGTCCTGGTATCCCAG
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+
+C000076|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Glu	Anticodon: CTC at 35-37 (45-47)	Score: 65.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGCCCCATCGTATAGCGGCctAGTACGCCGCCCTCTCACGGCGGTAaCGCGGGTTCGAATCCCGCTGGGGTCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+
+C000077|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Val	Anticodon: TAC at 34-36 (44-46)	Score: 74.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGTCTTTAGCTCAGCTGGTAGAGCGCCACGTTTACACCGTGGATGtCATCGGTTCGATCCCGGTAGGACCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000078|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Arg	Anticodon: TCT at 34-36 (44-46)	Score: 70.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCCCCAGTAGCTCAGGGGAtAGAGCAGCGGCCTTCTAATCCGCCGGtCGGGGGTTCGATTCCCTCCTGGGGCA
+Str: >>>>>>>..>>>>........<<<<.>>>>.........<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000079|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-85)	Length: 75 bp
+Type: Pro	Anticodon: TGG at 36-38 (46-48)	Score: 77.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: CGGGGTGTAGCTCAGCTtGGCtAGAGCGCCTGCTTTGGGAGCAGGAAGtCGCAGGTTCAAATCCTGTCACCCCGA
+Str: >>>>>>>..>>>>..........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000080|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Ala	Anticodon: GGC at 34-36 (44-46)	Score: 83.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GGGGCTGTGGCGCAGCTGGTAGCGCACCTGCATGGCATGCAGGGGGtCAGGGGTTCGAGTCCCCTCAGCTCCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000081|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Ala	Anticodon: GGC at 34-36 (44-46)	Score: 76.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GGGGCTGTGGCGCAGCTGGTAGCGCACCTGCATGGCATGCAGGGGGtCAGGGGTTCGAGTCCCCTCAGCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000082|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-93)	Length: 83 bp
+Type: Leu	Anticodon: GAG at 34-36 (44-46)	Score: 61.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCGCGGGTGGCGGAATGGCaGACGCGCTAGCTTGAGGTGCTAGTCCTCGAAAGGGGGTGGGGGTTCAAGTCCCCCTCCGCGCA
+Str: >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>>....<<<<..>>>>>.......<<<<<<<<<<<<.
+
+C000083|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Gly	Anticodon: GCC at 34-36 (44-46)	Score: 83.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCGGACGTAGCTCAGCTGGTAGAGCACCACCTTGCCAAGGTGGATGtCGCGAGTTCGAATCTCGTCGTCCGCT
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000084|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-81)	Length: 71 bp
+Type: Cys	Anticodon: GCA at 33-35 (43-45)	Score: 69.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |
+Seq: GGTGGGTTGGCCGAGAGGCGAGGCAGCGGCCTGCAAAGCCGTATaCACGGGTTCGAATCCCGTACCCACCT
+Str: >>>>>>>..>>>.........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+
+C000085|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-85)	Length: 75 bp
+Type: Val	Anticodon: GAC at 33-35 (43-45)	Score: 81.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGGCGATTGGCGCAGCGGTAGCGCGCTTCCCTGACACGGAAGAGGtCACTGGTTCGATCCCAGTATCGCCCACCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000086|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Gly	Anticodon: GCC at 34-36 (44-46)	Score: 83.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCGGACGTAGCTCAGCTGGTAGAGCACCACCTTGCCAAGGTGGATGtCGCGAGTTCGAATCTCGTCGTCCGCT
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000087|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-85)	Length: 75 bp
+Type: Val	Anticodon: GAC at 33-35 (43-45)	Score: 81.2
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GGGCGATTGGCGCAGCGGTAGCGCGCTTCCCTGACACGGAAGAGGtCACTGGTTCGATCCCAGTATCGCCCACCA
+Str: >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000088|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-86)	Length: 76 bp
+Type: Gly	Anticodon: GCC at 34-36 (44-46)	Score: 89.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCGGACGTAGCTCAGCTGGTAGAGCACCACCTTGCCAAGGTGGATGtCGCGAGTTCGAATCTCGTCGTCCGCTCCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000089|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Arg	Anticodon: CCT at 34-36 (44-46)	Score: 71.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCCCTCGTAGCTCAGTGGAtAGAGCACGGCTCTCCTAAAGCCGGTGtCGTTGGTTCGATTCCAATCGAGGGCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000090|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-83)	Length: 73 bp
+Type: Thr	Anticodon: CGT at 34-36 (44-46)	Score: 71.8
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |  
+Seq: GCTTCCTTAGCTCAGTCGGTAGAGCGTTTCACTCGTAATGAAAAGGtCATCAGTTCGATTCTGATAGGAAGCT
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000091|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-98)	Length: 88 bp
+Type: Ser	Anticodon: TGA at 35-37 (45-47)	Score: 69.6
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GGAAGGTTGTCCGAGCGGCctAAGGAGCTGGTCTTGAAAACCAGTGTGCGGTAAcCCCGTACCAAGGGTTCAAATCCCTTACCTTCCG
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>.....<<<<<<.>>>>>.......<<<<<<<<<<<<.
+
+C000092|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-98)	Length: 88 bp
+Type: Ser	Anticodon: GCT at 35-37 (45-47)	Score: 72.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *  
+Seq: GGAGACGTGCCAGAGCGGCcgAATGGGCTTCACTGCTAATGAAGTGTGGGGCACaACTCCACCGGGGGTTCAAATCCCCCCGTCTCCG
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>>>.....<<<<<<.>>>>>.......<<<<<<<<<<<<.
+
+C000093|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-84)	Length: 74 bp
+Type: Arg	Anticodon: ACG at 35-37 (45-47)	Score: 77.9
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |   
+Seq: GCGCCCATAGCTCAGCTGGAtAGAGCGTCTGTCTACGGAACAGAAGGtCAGGGGTTCGAATCCCTTTGGGCGCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.
+
+C000094|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-100)	Length: 90 bp
+Type: Ser	Anticodon: CGA at 35-37 (45-47)	Score: 68.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    
+Seq: GGTGACGTGTCCGAGCGGCcgAAGGTGCAACACTCGAAATGTTGTTTGGTGTAAAAGCCAACGTGGGTTCAAATCCCACCGTCACCGCCA
+Str: >>>>>>>...>>...........<<..>>>>>.......<<<<<.>>>>>......<<<<<.>>>>>.......<<<<<<<<<<<<....
+
+C000095|CP000474|Actinomycetota|Paenarthrobacter.trna1 (11-81)	Length: 71 bp
+Type: Cys	Anticodon: GCA at 33-35 (43-45)	Score: 61.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |
+Seq: CGTGGTGTACCCGAGAGGCCAGGGAGCTGCCTGCAAAGCAGCGCaCGCGGGTTCGAATCCCGCCACCACGT
+Str: >>>>>>>..>>>.........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+
+C000096|CP000512|Betaproteobacteria|Paracidovorax.trna1 (11-86)	Length: 76 bp
+Type: Arg	Anticodon: CCG at 34-36 (44-46)	Score: 83.3
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *
+Seq: GCGGCTGTAGCTCAGTGGAtAGAGTATTGGCCTCCGAAGCCAAGGGtCGTGGGTTCGATCCCCGCCAGCCGCACCA
+Str: >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
+C000097|CP000512|Betaproteobacteria|Paracidovorax.trna1 (11-87)	Length: 77 bp
+Type: fMet	Anticodon: CAT at 35-37 (45-47)	Score: 77.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: CGCGCGATGGAGCAGTCtGGTAGCTCGTTGGGCTCATAACCCAAAGGtCGGAGGTTCAAATCCTTCTCGCGCAACCA
+Str: .>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<.....
+
+C000098|CP000512|Betaproteobacteria|Paracidovorax.trna1 (11-87)	Length: 77 bp
+Type: Met	Anticodon: CAT at 35-37 (45-47)	Score: 76.0
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GGCGCTTTAGCTCAGTCGGTtAGAGCGATGGAATCATAATCCACAGGtCCGCGGTTCGAATCCGTGAAGCGCCACCA
+Str: >>>>>>>..>>>>.........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<....
+
+C000099|CP000512|Betaproteobacteria|Paracidovorax.trna1 (11-95)	Length: 85 bp
+Type: Leu	Anticodon: GAG at 35-37 (45-47)	Score: 63.7
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    *    |    
+Seq: GCCGTCGTGGTGAAATTGGTaGACACGCTATCTTGAGGGGGTAGTGGCGAAAGCTGTGCGAGTTCGAGTCTCGCCGACGGCACCA
+Str: >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<....
+
+C000100|CP000512|Betaproteobacteria|Paracidovorax.trna1 (11-87)	Length: 77 bp
+Type: Ile	Anticodon: GAT at 35-37 (45-47)	Score: 80.4
+         *    |    *    |    *    |    *    |    *    |    *    |    *    |    * 
+Seq: GGGTCTGTAGCTCAGCTGGTtAGAGCACCGTCTTGATAAGGCGGGGGtCGTTGGTTCGAGCCCAACTAGACCCACCA
+Str: >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<....
+
