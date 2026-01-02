@@ -43,10 +43,10 @@
 #define HAVE_REGCOMP 1
 
 /* Define to 1 if you have the `re_comp' function. */
-/* #undef HAVE_RE_COMP */
+#define HAVE_RE_COMP 1
 
 /* Define to 1 if you have the `sqrt' function. */
-#define HAVE_SQRT 1
+/* #undef HAVE_SQRT */
 
 /* Define to 1 if you have the <stddef.h> header file. */
 #define HAVE_STDDEF_H 1

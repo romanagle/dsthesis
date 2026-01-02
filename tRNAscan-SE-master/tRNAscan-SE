@@ -18,7 +18,7 @@
 #                           
 
 use strict;
-use lib "/usr/local/lib/tRNAscan-SE";
+use lib "/home/exx/.local/lib/tRNAscan-SE";
 use Getopt::Long;
 use tRNAscanSE::Configuration;
 use tRNAscanSE::tRNA;
@@ -44,7 +44,7 @@ our $release_date = "Nov 2022";
 our $program_id = "tRNAscan-SE-".$version;
 
 # modified by 'make'
-our $default_conf = "/usr/local/bin/tRNAscan-SE.conf";
+our $default_conf = "/home/exx/.local/bin/tRNAscan-SE.conf";
 
 # Signal handling
 $SIG{'TERM'} = 'error_handler';
