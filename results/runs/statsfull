@@ -1,0 +1,37 @@
+
+tRNAscan-SE v.2.0.12 (Nov 2022) scan results (on host jupiter)
+Started: Thu 01 Jan 2026 10:48:17 PM PST
+
+------------------------------------------------------------
+Sequence file(s) to search:        /data/RUDD/dsthesis/data/raw/trna_sequence_cmp_bac_1.fasta, /data/RUDD/dsthesis/results/runs/testfull
+Search Mode:                       Bacterial
+Results written to:                /data/RUDD/dsthesis/results/runs/testfull
+Output format:                     Tabular
+Searching with:                    Infernal First Pass->Infernal
+Isotype-specific model scan:       Yes
+Covariance model:                  /home/exx/.local/lib/tRNAscan-SE/models/TRNAinf-bact.cm
+                                   /home/exx/.local/lib/tRNAscan-SE/models/TRNAinf-bact-SeC.cm
+Infernal first pass cutoff score:  10
+
+Temporary directory:               /tmp
+tRNA secondary structure
+    predictions saved to:          --struct
+Isotype specific
+    predictions saved to:          /data/RUDD/dsthesis/results/runs/structfull
+Search statistics saved in:        /data/RUDD/dsthesis/results/runs/statsfull
+------------------------------------------------------------
+
+First-pass Stats:
+---------------
+Sequences read:         958810
+Seqs w/at least 1 hit:  958801
+Bases read:             94337839 (x2 for both strands)
+Bases in tRNAs:         74415231
+tRNAs predicted:        958801
+Av. tRNA length:        77
+Script CPU time:        826.15 s
+Scan CPU time:          28438.86 s
+Scan speed:             6.6 Kbp/sec
+
+First pass search(es) ended: Fri 02 Jan 2026 03:04:28 PM PST
+

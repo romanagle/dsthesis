@@ -34,14 +34,24 @@ def main(argv):
 
     with open(iso_path, newline="", encoding="utf-8") as f:
         iso_reader = csv.reader(f)
-        iso_header = next(iso_reader)
-        iso_rows = {normalize_isomodels_name(r[0]): r for r in iso_reader}
+        iso_header = [h.strip() for h in next(iso_reader)]
+        iso_rows = {}
+        for row in iso_reader:
+            if not row:
+                continue
+            row = [v.strip() for v in row]
+            iso_rows[normalize_isomodels_name(row[0])] = row
 
     with open(test_path, newline="", encoding="utf-8") as f:
         test_reader = csv.reader(f)
-        test_header = next(test_reader)
+        test_header = [h.strip() for h in next(test_reader)]
         test_header = dedupe_headers(test_header)
-        test_rows = {r[0]: r for r in test_reader}
+        test_rows = {}
+        for row in test_reader:
+            if not row:
+                continue
+            row = [v.strip() for v in row]
+            test_rows[row[0]] = row
 
     out_header = iso_header + test_header[1:]
 

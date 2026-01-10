@@ -25,7 +25,8 @@ def load_isomodels(path):
             continue
         if len(fields) < len(header):
             fields += [""] * (len(header) - len(fields))
-        rows[fields[0]] = fields[: len(header)]
+        fields = [v.strip() for v in fields[: len(header)]]
+        rows[fields[0]] = fields
     return header, rows
 
 
@@ -91,7 +92,7 @@ def main(argv):
             if not row:
                 missing += 1
                 continue
-            writer.writerow([row[0], primary_sequence(seq)] + row[1:])
+            writer.writerow([row[0].strip(), primary_sequence(seq)] + [v.strip() for v in row[1:]])
             written += 1
 
     print(f"Wrote {written} rows to {output_path}", file=sys.stderr)
