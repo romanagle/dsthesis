@@ -1,0 +1,16 @@
+# Large data files
+*.csv
+*.tar.gz
+*.fasta.gz
+
+# MMseqs2 output
+mmseqs2_dedup/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
