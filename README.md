@@ -6,7 +6,7 @@ DIGtRNA is a genome-scale deep learning pipeline for discovering tRNA identity e
 
 ## Overview
 
-Each tRNA must be accurately charged by its cognate aminoacyl-tRNA synthetase. The sequence and structural features that determine this specificity — identity elements — are well-characterized in a handful of model organisms but poorly mapped across the full diversity of prokaryotic life. DIGtRNA addresses this gap by training a discriminative classifier on millions of tRNA sequences from 142,794 genomes in GTDB r226 and applying ISM to extract the learned recognition logic as interpretable sequence logos for all 22 isotype classes.
+Each tRNA must be accurately charged by its cognate aminoacyl-tRNA synthetase. The sequence and structural features that determine this specificity are well-characterized in a handful of model organisms but poorly mapped across the full diversity of prokaryotic life. These features are called identity elements. DIGtRNA addresses this gap by training a discriminative classifier on millions of tRNA sequences from 142,794 genomes in GTDB r226 and applying ISM to extract the learned recognition logic as interpretable sequence logos for all 22 isotype classes.
 
 The approach recovers established identity elements (e.g. the G3:U70 wobble pair for tRNA-Ala, A73 for tRNA-Val) while nominating candidate elements in lineages underrepresented in classical biochemical studies.
 
@@ -75,9 +75,3 @@ export TRNA_DATA_ROOT=/path/to/dsthesis   # default: /data/roma/dsthesis
 **Key dependencies:** `torch` ≥ 2.6 (CUDA 12.4), `rinalmo` (git install), `flash-attn` ≥ 2.8, `pandas`, `numpy`, `scikit-learn`, `logomaker`, `matplotlib`, `wandb`
 
 **External tools:** `mmseqs2` (sequence deduplication)
-
-## Citation
-
-If you use this work, please cite:
-
-> Nagle, R. (2026). *DIGtRNA: Discriminative element Identification via GCN for tRNAs*. UC Berkeley.
