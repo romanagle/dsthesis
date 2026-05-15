@@ -1,0 +1,10 @@
+{
+  "label": "domain",
+  "n_rows_total": 1642403,
+  "n_used": 200000,
+  "n_train": 160000,
+  "n_test": 40000,
+  "n_classes": 25,
+  "test_acc": 0.944475,
+  "fit_time_s": 205.1616027355194
+}

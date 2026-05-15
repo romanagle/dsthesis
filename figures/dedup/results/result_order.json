@@ -1,0 +1,10 @@
+{
+  "label": "order",
+  "n_rows_total": 1735792,
+  "n_used": 200000,
+  "n_train": 160000,
+  "n_test": 40000,
+  "n_classes": 25,
+  "test_acc": 0.947225,
+  "fit_time_s": 190.56465220451355
+}

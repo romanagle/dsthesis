@@ -1,0 +1,10 @@
+{
+  "label": "species",
+  "n_rows_total": 4749713,
+  "n_used": 200000,
+  "n_train": 160000,
+  "n_test": 40000,
+  "n_classes": 25,
+  "test_acc": 0.97525,
+  "fit_time_s": 122.69216394424438
+}

@@ -1,0 +1,57 @@
+## Large data files (not tracked — see DOCUMENTATION.md for download instructions)
+*.csv
+*.tsv
+*.fasta
+*.fa
+*.npy
+*.npz
+*.pt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+## Embeddings and model checkpoints
+embeddings/
+results/embeddings/
+results/runs/
+
+## Model output directories (weights + saliency maps)
+gnn_final/
+gnn_film/
+gnn_film_sprinzl/
+gnn_raw_film/
+arch_ablation_5iso/
+order_identity_embeddings/
+order_ism_embeddings/
+
+## Pipeline progress markers
+*.done
+
+## Logs and temp files
+logs/
+wandb/
+*.log
+esltmp*
+figures/classification/cache/
+figures/film_comparison/
+figures/film_divergence/
+figures/gnn_eda/
+figures/ie_comparison/
+figures/ism_logos/
+figures/taxonomy/
+
+## Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+## OS
+.DS_Store

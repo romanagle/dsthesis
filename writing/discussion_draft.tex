@@ -1,0 +1,303 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+
+\title{\textbf{Deep Learning Framework for tRNA Identity Element Discovery}}
+
+\author{
+Roma A. Nagle
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+During translation, cells synthesize proteins from messenger RNA using transfer RNAs (tRNAs) that must be charged with the correct amino acids and delivered to the ribosome. Because mischarging prevents cells from producing proteins essential for their function, each tRNA must be accurately recognized by its corresponding aminoacyl-tRNA synthetase. This specificity is encoded by tRNA identity elements, which are sequence and structural features that define synthetase recognition. However, their systematic characterization across prokaryotic diversity remains limited, as existing approaches rely on experimental validation constrained to specific systems or on sequence-based models that capture family-level conservation but do not resolve clade-specific identity determinants. Here, we introduce a scalable deep learning approach for discovering tRNA identity elements using a dense graph convolution network architecture and in silico mutagenesis (ISM) for motif extraction. Using tRNAscan-SE, we first extract predicted tRNA sequences and their isotypes from genomes across the Genome Taxonomy Database (GTDB), yielding a dataset of 6.1 million prokaryotic tRNA sequences. We then apply ISM to identify sequence features that are discriminative across tRNA isotypes, corresponding to candidate identity elements that promote cognate synthetase recognition or inhibit non-cognate synthetase recognition. We also leverage phylogenetic annotations provided by the GTDB genomes, enabling direct extraction of clade-specific identity determinants. Finally, by comparing identity elements across taxonomic orders, we identify lineages where tRNA recognition differs substantially, highlighting potential host organisms in which engineered tRNA–synthetase pairs could function independently of the native system. Using this framework, we report nominated identity element logos for all 20 canonical tRNA isotypes across both bacterial and archaeal domains, providing a foundation for experimental validation of candidate identity elements and enabling orthogonal tRNA design and identification of orthogonal host systems, ultimately supporting expanded genetic code engineering.
+\end{abstract}
+\section{Introduction}
+Transfer RNAs (tRNAs) are central components of the translation machinery and play a role in decoding messenger RNA into protein sequences. These small structured RNAs serve as adaptor molecules that link codons in mRNA to their corresponding amino acids during protein synthesis1,2. Each tRNA adopts a characteristic L-shaped tertiary fold composed of four helical domains: the acceptor arm, which terminates in the universally conserved CCA-3' end where the amino acid is covalently attached; the D arm, named for its modified dihydrouridine residues; the anticodon arm, which contains the three nucleotides that base-pair with the cognate mRNA codon; the variable region, whose length may vary across tRNA isotypes; and the T arm, which interacts with the ribosome to properly position the tRNA during translation (Figure 1).
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{trnafig1.jpg}
+  \caption{\textbf{tRNA secondary and tertiary structure.} (A) Cloverleaf secondary structure showing the canonical domain organization and Sprinzl numbering system; conserved nucleotides are explicitly indicated, Watson–Crick–Franklin base pairs (including G·U wobble pairs) are marked with a dot. (B) Three-dimensional structure of tRNA-Phe (PDB: 1EHZ) illustrating the L-shaped architecture that positions the acceptor arm and anticodon arm at opposite ends of the molecule; colors correspond to structural domains as in (A)3.}
+\end{figure}
+
+The aaRS family is divided into two structurally distinct classes4. Class I synthetases are characterized by a Rossmann-fold catalytic domain and they acylate the 2'-OH of the terminal adenosine of the tRNA acceptor stem. Class II synthetases instead adopt an antiparallel β-sheet architecture defined by three conserved sequence motifs and charge the 3'-OH of the same adenosine. This division is nearly universal and reflects an ancient partitioning of the 20 amino acid identities, with each class recognizing a largely distinct set of tRNA isotypes. 
+
+Recognition between tRNAs and their cognate synthetases is governed by a collection of sequence and structural determinants known as identity elements. These determinants are distributed throughout the tRNA molecule and enable synthetases to discriminate among highly similar tRNA structures. Early biochemical studies demonstrated that a small number of nucleotides strongly influence aminoacylation specificity5. They are often located in the anticodon arm, acceptor arm, or at the discriminator base located immediately 5' of the CCA end (position 73)6.  A well-characterized example is the G3:U70 wobble base pair in the acceptor stem of tRNAAla, which is both necessary and sufficient to direct aminoacylation by alanyl-tRNA synthetase; transplanting this single base pair into a non-cognate tRNA scaffold is sufficient to redirect charging toward alanine7. More broadly, single nucleotide substitutions can convert one tRNA into another identity class, illustrating the sensitivity of synthetase recognition to specific sequence features7,8. These findings established that tRNA identity is encoded not by the anticodon alone but by a distributed set of determinants embedded within the tRNA sequence and structure. In some cases, identity depends strongly on the anticodon; for example, methionine tRNAs rely heavily on anticodon recognition. In contrast, alanine and serine tRNAs are largely recognized through identity elements outside the anticodon, including features within the acceptor stem and distinctive structural motifs.
+
+Subsequent experimental work expanded this framework by identifying both positive identity elements, which promote recognition by the correct synthetase, and negative identity elements, which prevent mischarging by noncognate enzymes9. These determinants can occur in various regions of the tRNA molecule, and may involve cooperative interactions between nucleotides or base pairs. Structural studies of tRNA–synthetase complexes have further revealed that synthetases bind to combinations of sequence motifs and structural features within the L-shaped tRNA fold10,11. Despite decades of biochemical and structural investigation, most of which has been conducted in a limited number of model organisms, many aspects of tRNA recognition remain poorly understood, particularly across the vast evolutionary diversity of microbial genomes.
+
+The rapid expansion of genomic sequencing has created new opportunities to study tRNA identity determinants at large evolutionary scales. Databases such as the Genome Taxonomy Database (GTDB)12 now contain hundreds of thousands of prokaryotic genomes, providing access to millions of annotated tRNA sequences. Automated tools such as tRNAscan-SE13 enable efficient identification and classification of tRNA genes within these genomes. These resources make it possible to investigate patterns of tRNA sequence variation and conservation across diverse microbial lineages, potentially revealing previously unrecognized determinants of tRNA identity.
+
+tRNA identity provides an ideal system for investigating whether modern sequence models encode mechanistically meaningful signals. Because the determinants governing aminoacylation specificity are distributed across the tRNA molecule and involve interactions among multiple nucleotides, successful prediction of tRNA identity requires capturing both local sequence motifs and secondary structure context. Moreover, the availability of millions of tRNA sequences across diverse prokaryotic taxa provides a uniquely rich dataset for evaluating whether machine learning models can recover biologically meaningful patterns at evolutionary scale. In this work, we use tRNAscan-SE to curate a large dataset of tRNA sequences annotated from genomes spanning the full diversity of the GTDB to ask three questions: whether a structure-aware neural network trained on RNA foundation model representations recovers the known biochemical identity elements for each isotype; whether model-derived attribution scores reveal candidate identity elements not previously documented; and whether identity element signatures vary systematically across prokaryotic clades, identifying lineages whose aminoacylation grammar may diverge from the global consensus.
+
+
+\section{Related Work}
+
+\subsection{Classical Discovery of tRNA Identity Elements}
+
+The biochemical characterization of tRNA identity elements has been organized into a set of identity rules, summarized in a review by Giegé6,14. It catalogs the positive and negative determinants governing aminoacylation specificity for each tRNA across organisms and synthetase classes. While this framework remains the foundational reference for tRNA recognition, it was derived primarily from low-throughput in vitro assays in which individual tRNA variants are transcribed, purified, and tested for aminoacylation one at a time15. The inherent bottleneck of this approach is throughput: each variant requires independent preparation and a separate kinetic experiment, limiting systematic surveys to tens of positions at most.
+
+Higher-throughput adaptations have partially addressed this constraint. Plate-based fluorescence assays16 and cell-based suppressor reporter systems17,18 have enabled screens across larger variant libraries. This involves a tRNA carrying identity mutations being scored by readthrough of a nonsense codon upstream of a fluorescent or selectable marker. More recently, sequencing-coupled in vitro aminoacylation assays have made it possible to simultaneously measure charging efficiency across thousands of tRNA sequence variants in a single experiment19. Despite these advances, high-throughput studies have remained anchored to a small number of model tRNA scaffolds and synthetase systems, and the resulting data do not capture the diversity of recognition strategies that may exist across the full phylogenetic range of microbial life.
+
+\subsection{Comparative Genomics Approaches}
+
+As large collections of genomic tRNA sequences became available, comparative genomics approaches were developed to infer identity determinants from patterns of sequence conservation. One influential framework, developed by Ardell and Andersson, introduced Class-Informative Features (CIFs): positions or base pairs whose nucleotide distributions differ significantly between tRNA isotypes across large sequence alignments20. This method was implemented in the TFAM tool21, which applies CIF-based scoring to classify tRNA sequences by amino acid identity and has been used to study co-evolution of identity rules with synthetase lateral gene transfer. More broadly, genomic surveys of tRNA genes across diverse organisms have provided the comparative sequence context needed to assess how identity-associated positions are conserved across the tree of life22,23.
+These approaches leverage evolutionary conservation across large tRNA datasets to identify nucleotides that correlate with amino acid identity. By analyzing covariation patterns and structural constraints, CIF-based methods have successfully recovered many known identity elements and suggested additional candidate determinants consistent with Giegé's identity rules. However, these methods rely on explicit alignment models and predefined structural features, which may limit their ability to capture complex or distributed sequence interactions not captured by position-wise statistics.
+
+
+\subsection{Covariance Models and tRNA Annotation}
+
+Covariance models (CMs) are probabilistic models of RNA sequence and secondary structure that form the computational backbone of modern tRNA annotation tools including tRNAscan-SE13. A CM is constructed from a multiple sequence alignment of a known RNA family and encodes, at each position, both the probability of observing each nucleotide and, for paired positions, joint base-pair emission probabilities that capture conserved structural constraints and patterns of covariation. This covariation information is captured through a stochastic context-free grammar (SCFG) framework24, in which the model simultaneously scores sequence identity and base-pairing compatibility, allowing it to recognize distant homologs that have diverged in primary sequence but retained conserved secondary structure. During genome annotation, a software package known as Infernal searches a query sequence against a library of CMs and scores candidate loci by their match to the model; tRNAscan-SE 2.0 is a wrapper for Infernal, and applies this framework using a curated set of tRNA family models to identify tRNA genes and assign isotype labels based on anticodon identity and overall structural fit to the relevant CM25.
+While CMs are highly effective for annotation and isotype assignment, they encode a model of conservation rather than function: they capture what positions tend to look like across a family, but do not explicitly represent which positions are mechanistically important for synthetase recognition. This distinction motivates the use of representation learning approaches that can potentially recover distributed identity elements from sequence variation across large, phylogenetically diverse datasets.
+
+\subsection{Machine Learning Approaches to RNA Function}
+
+Machine learning methods have also been applied directly to tRNA isotype classification. Pawłowski and Zielenkiewicz developed a logistic model to determine identity nucleotides and estimate the binding energy between tRNAs and their cognate aminoacyl-tRNA synthetases26. By fitting a simple logistic classifier to tRNA sequence features, they identified position-specific nucleotide contributions to synthetase recognition and derived an energetic interpretation of identity element strength. While this approach provides an interpretable model of aminoacylation specificity, the model was trained on only 511 tRNA sequences drawn from tRNAdb27, spanning 90 organisms distributed across Bacteria, Archaea, and Eukaryota. This dataset is heavily biased toward eukaryotic sequences and is vanishingly small relative to the diversity of tRNA sequences now available in large genomic databases. As a result, clade-specific identity elements present in underrepresented or unsampled lineages would be entirely invisible to this model. In contrast, this study trains and evaluates a classifier on millions of tRNA sequences spanning the full phylogenetic diversity of prokaryotic genomes in the GTDB, enabling identification of identity signals beyond those characterized in model organisms.
+
+\section{Methods}
+
+\subsection{Data, tRNA Annotation at Genomic Scale}
+\subsubsection{Genome source}
+We used all 142,794 representative bacterial and archaeal genomes from the Genome Taxonomy Database release 226 (GTDB r226; 135,842 bacteria, 6,952 archaea). GTDB r226 provides a standardized, phylogenetically corrected taxonomy derived from concatenated marker-gene phylogenies.
+
+\subsubsection{tRNA annotation}
+Transfer RNAs were predicted genome-wide with tRNAscan-SE 2.0 in bacterial mode or archaeal mode as appropriate, retaining three output files per genome: the main tabular output, the secondary isotype-model scores, and the secondary structure output. For each genome, the three per-genome files are parsed and joined on a shared tRNAscan identifier, and the resulting rows each have a tRNAscan ID, contig ID, genome ID, primary sequence, predicted anticodon isotype, per-isotype covariance model scores, genomic coordinates, codon, intron coordinates, confidence score, note flags, and dot-bracket secondary structure. This yielded a raw dataset of 6,068,145 tRNA entries spanning 25 canonical isotype classes across 142,794 of the 143,614 GTDB r226 genomes, with a mean of roughly 42 tRNAs per genome. The remaining 820 genomes (804 Bacteria, 16 Archaea) produced no tRNA predictions and are excluded from all subsequent analysis, most likely reflecting highly fragmented assemblies or scan failures rather than genuine tRNA absence.
+
+\subsubsection{ Sprinzl alignment and data curation}
+
+The Sprinzl coordinate system provides a universal positional numbering for tRNA that is independent of sequence length: every nucleotide in every mature tRNA is assigned a named position (1–73, with supplementary positions 17a, 20a, 20b for D-arm loop length variation and 47a–47p for the type-II variable arm), such that orthologous positions carry the same label across all organisms and isotypes. Because tRNAscan-SE returns the secondary structure as a dot-bracket string, it is possible to parse this string algorithmically and recover the Sprinzl label for each character without any prior sequence knowledge. Our mapping script does this by locating structural landmarks directly in the dot-bracket string: the discriminator is always the final character and receives label 73; the T arm loop is the rightmost run of exactly seven consecutive dots, receiving labels 54–60; the T stem is the five characters flanking that loop on each side (49–53 and 61–65); the acceptor arm stem is the outermost seven paired characters (1–7 and 66–72); the anticodon arm loop is the next seven-dot run inward (32–38); and the D arm stem and loop are resolved by counting the remaining characters, with D-arm loop label assignment drawn from a fixed table keyed by loop length. For example, a 9-nt D arm receives labels 14, 15, 16, 17, 17a, 18, 19, 20, 21, while a 6-nt D arm skips 16, 17, and 17a entirely. Variable region positions 44–48 are assigned to type-I tRNAs (3–5 unpaired nucleotides), and positions 44–47p followed by 48 to type-II tRNAs (Ser/Leu), with the number of 47x labels determined by the observed variable arm length. Any sequence for which this parsing fails, indicating a topology that cannot be unambiguously mapped onto the canonical Sprinzl frame, is excluded from the dataset. 
+
+Once every surviving sequence was mapped to Sprinzl coordinates, we used the resulting structural annotations to remove rare and likely erroneous structural forms. Each sequence was assigned a structural variant label defined by three factors derived from its Sprinzl mapping: its Sprinzl type (type-I or type-II), its D-arm insertion count (the number of supplementary positions 17a, 20a, 20b that were occupied, ranging 0–3), and its variable arm length (the number of 47a–47p positions occupied, ranging 0–16). Within each isotype, the most frequent structural variant was designated the dominant form and retained unconditionally. All minority variants were then subjected to a taxonomic concentration test: a variant was kept only if its sequences were concentrated in a small number of bacterial orders, operationally defined as the top 3 orders accounting for at least 75\% of that variant's sequences. Variants failing this test were discarded as likely annotation artifacts or sequencing noise rather than genuine biological structural diversity.
+
+The tRNAscan-SE confidence score reflects the quality of the covariance model alignment and is correlated with biological authenticity. Pseudogenes and degraded gene copies tend to receive depressed scores and are frequently flagged with "pseudo" or "low-score" annotations in the note field. To remove these systematically, we computed the mean and standard deviation of confidence scores separately within each GTDB domain (Bacteria and Archaea) and excluded any sequence scoring more than two standard deviations below its domain mean, a threshold chosen to target the low-quality tail while retaining the bulk of the distribution.
+
+Prokaryotic genome databases contain many near-identical assemblies within closely related strains, and identical tRNA sequences appearing in both training and test partitions would artificially inflate evaluation metrics. We performed genus-level deduplication via MMseqs2 by streaming through the full dataset and retaining one representative row per unique (sequence, genus) pair; a sequence appearing hundreds of times within the same genus is collapsed to a single entry, while the same sequence occurring in two different genera is retained once per genus to preserve genuine within-sequence cross-genus diversity. All sequences were exported to FASTA, clustered, and the representative identifier for each connected-component cluster extracted; the CSV was then filtered to retain exactly one row per representative, collapsing any remaining redundant copies while preserving diversity across genuinely distinct sequences.
+
+To distinguish the contribution of features in the tRNA body from that of the anticodon arm to classification, we generated a parallel anticodon-masked dataset. For each sequence, the anticodon triplet was located by searching for the tRNAscan-reported codon string within the primary sequence; when multiple matches existed, the occurrence closest to Sprinzl position 34 (0-indexed position 33, the canonical wobble position) was selected. The three nucleotides at that match were replaced with NNN. The masked and unmasked datasets were embedded, trained, and evaluated independently under otherwise identical conditions.
+
+The curated dataset contains 1,796,493 tRNA sequences representing 22 isotype classes and spanning 27,059 bacterial genera and 2,043 archaeal genera (Table 1). It was then partitioned into training (80\%) and held-out test (20\%) sets using a stratified split by isotype label, ensuring proportional class representation in both subsets.
+
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Domain & Genomes & Raw tRNAs & Sprinzl & Confidence & Genus & Structure \\
+       &         &           & aligned & filter     & dedup & variant filter \\
+\midrule
+Bacteria & 135{,}722 & 5{,}802{,}478 & 5{,}263{,}793 & 5{,}058{,}590 & 2{,}047{,}916 & 2{,}039{,}221 \\
+Archaea  & 6{,}728   & 272{,}240     & 162{,}745     & 155{,}121     & 90{,}413     & 89{,}540 \\
+\midrule
+Total    & 142{,}450 & 6{,}074{,}718 & 5{,}426{,}538 & 5{,}213{,}711 & 2{,}138{,}329 & 2{,}128{,}761 \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Dataset summary}. Curated counts reflect sequences passing all four filters: Sprinzl alignment, confidence score, genus-level deduplication, and structural variant pruning. Isotype classes Undet and Sup are excluded from the curated set; SeC is absent after Sprinzl filtering due to its non-canonical extended variable region. The 22 retained isotype classes are: Ala, Arg, Asn, Asp, Cys, fMet, Gln, Glu, Gly, His, Ile, Ile2, Leu, Lys, Met, Phe, Pro, Ser, Thr, Trp, Tyr, Val.}
+\label{tab:trna_summary}
+\end{table}
+
+\subsection{RiNALMo Per-Position Embeddings}
+
+We evaluated multiple RNA foundation models, including RiNALMo and RNA-FM, and selected RiNALMo (giga-v1) based on downstream classification performance and interpretability (see Results). RiNALMo is a 650M-parameter RNA language model built on a bidirectional transformer encoder. It was pre-trained on RNAcentral, a corpus that is predominantly composed of eukaryotic non-coding RNA. Although the pre-training distribution does not include prokaryotic tRNA specifically, the model learns general nucleotide context representations that encode both sequence identity and implicit structural information through the co-evolutionary signal present in the corpus.
+
+All tRNA sequences with masked anticodon regions were passed through RiNALMo in inference mode with weights strictly frozen; all dropout modules were set to $p = 0.0$ before any forward pass to ensure deterministic representations. For each sequence of length $L$, the encoder output is a matrix of shape $(L+2, 1280)$ including a leading [CLS] token; we discard the special tokens and retain only the positions corresponding to actual nucleotides, yielding a per-position embedding array of shape $(L, 1280)$.
+
+
+\subsection{Graph Convolution Network Classifier}
+
+We evaluated multiple classifier architectures, including linear models, deeper multilayer perceptrons, and squeeze-and-excitation variants, and selected a graph convolutional network (GCN) based on improved performance and recovery of known identity elements (see Results). We implement a GCN architecture to model tRNA sequence and secondary structure jointly. Each tRNA is represented as a labeled graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ derived from its dot-bracket secondary structure string. Nodes $v_i \in \mathcal{V}$ correspond to nucleotide positions, with node features initialized from the RiNALMo per-position embedding vectors. The adjacency matrix $A$ is assembled from three edge types: backbone bonds connecting each position to its sequential neighbor ($i \leftrightarrow i+1$); base-pair bonds between every position pair identified as paired by parsing the dot-bracket annotation; and self-loops on every node (the identity matrix). The combined adjacency is then symmetrically degree-normalized as $\hat{A} = D^{-1/2} A D^{-1/2}$, where $D_{ii} = \sum_j A_{ij}$, so that message aggregation is scaled by node degree. Padding positions beyond the true sequence length receive no edges, effectively masking them from message passing.
+
+Type-II tRNAs (Ser, Leu) possess an elongated variable region of more than five nucleotides that forms a stem-loop and has no structural equivalent in type-I tRNAs. Allowing message passing through this arm would let the GCN exploit variable-region sequence as a direct isotype cue rather than learning body-level structural features, and would also create spurious cross-position dependencies between the masked variable-region N characters and the rest of the graph. The variable region is located at inference time by parsing the dot-bracket string to identify the four canonical stems, then taking the region between the 3$'$ end of the anticodon stem and the 5$'$ start of the T arm. For any sequence where this region exceeds five nucleotides, all entries in $A$ whose both endpoints fall within the variable arm are zeroed before normalization, removing those edges from the graph entirely.
+
+The classifier consists of three \texttt{DenseGCNLayer} modules, each performing
+\[
+H \leftarrow \text{Dropout}(\text{ReLU}(\hat{A} \cdot H W)),
+\]
+with a bias-free linear projection $W$, hidden dimension 256, and dropout rate 0.3. After the final layer, node representations are collapsed to a graph-level vector by mean pooling over the sequence dimension. This vector is concatenated with two auxiliary features: a phylogenetic one-hot encoding of the sequence's GTDB lineage up to the family level, and a single scalar equal to the raw variable region length divided by 25 to normalize it to approximately $[0, 1]$. The concatenated representation is passed through a single linear projection head to 25 logits, reduced to 24 effective classes by merging the fMet label into Met at load time via index relabeling, since initiator and elongator methionine tRNAs share the same anticodon triplet in bacteria and are not structurally distinguishable by sequence alone.
+
+Hyperparameters were selected via a Weights \& Biases Bayesian sweep over six parameters: number of GCN layers, hidden dimension, dropout, learning rate, weight decay, and training epochs. Rather than optimizing for classification accuracy, the sweep maximized an identity element (IE) recovery score, a quantitative measure of whether the model's learned representations assign high saliency to positions and nucleotides known from biochemistry to determine aminoacyl-tRNA synthetase recognition.
+
+The IE score is computed from in-silico saturation mutagenesis (ISM): for each test sequence, every position is individually substituted with all four nucleotides, re-embedded through RiNALMo, and re-classified by the GCN, yielding a $(L \times 4 \times C)$ logit-difference tensor. To isolate isotype-specific signals and suppress universally conserved positions that shift all class logits equally, we compute a differential saliency map: the target-class logit change at each (position, nucleotide) pair minus the mean logit change averaged over all other classes. This map is then row-centered per position. The IE score for each isotype was computed as a weighted sum over a curated set of known identity element positions and their expected nucleotides, based on prior biochemical studies. The contribution of each expected position is the normalized differential saliency of the correct nucleotide multiplied by its tier weight, summed and expressed as a percentage of the maximum possible weighted score.
+
+\subsubsection{ISM-Based Identity Element Attribution}
+
+For each (isotype $\times$ domain) combination, ISM attribution maps were computed using the trained GCN and the RiNALMo foundation model. The full dataset was split using stratified shuffle sampling (80\% train / 20\% test). From the held-out test partition, up to 100 sequences belonging to the target (isotype, domain) group were sampled without replacement.
+
+For each sequence $s$ of length $L$, the wildtype embedding was computed by passing $s$ through RiNALMo and extracting per-position representations at token positions $1$ through $L$ (excluding the [CLS] token), zero-padded to $L_{\max}$. The GCN was then applied using a symmetrically normalized adjacency matrix encoding backbone connectivity and predicted Watson--Crick base pairs (with variable loops longer than 5 nt fully disconnected). This produced a wildtype logit vector $\mathbf{z}^{\mathrm{wt}} \in \mathbb{R}^{n_{\mathrm{classes}}}$.
+
+For each sequence position $p \in \{0, \ldots, L-1\}$ and each nucleotide $n \in \{\mathrm{A}, \mathrm{C}, \mathrm{G}, \mathrm{T}\}$, a single-character substitution was made at position $p$, yielding a mutant sequence. Mutants were re-embedded with RiNALMo and re-classified using the same adjacency matrix as the wildtype (i.e., secondary structure is held fixed across mutations). The raw attribution for each $(p,n)$ mutation was computed as:
+
+\begin{equation}
+\Delta \mathrm{logit}(p,n,c) 
+= z^{\mathrm{mut}}_{c} - z^{\mathrm{wt}}_{c},
+\quad \forall c \in \{1, \ldots, n_{\mathrm{classes}}\}.
+\end{equation}
+
+This yields a per-sequence ISM tensor of shape $(L_{\max}, 4, n_{\mathrm{classes}})$. ISM tensors were accumulated and averaged over all $N \leq 100$ sequences, producing
+\[
+\overline{\Delta \mathrm{logit}} \in \mathbb{R}^{L_{\max} \times 4 \times n_{\mathrm{classes}}}.
+\]
+
+To isolate signal specific to the target isotype $k$, the target-class slice was extracted and the mean attribution over all other classes was subtracted:
+
+\begin{equation}
+S^{(1)}_{p,n}
+= \overline{\Delta \mathrm{logit}}_{p,n,k}
+- \frac{1}{n_{\mathrm{classes}} - 1}
+\sum_{c \neq k} \overline{\Delta \mathrm{logit}}_{p,n,c}.
+\end{equation}
+
+Each position was then row-centered by subtracting the mean over the four nucleotides:
+
+\begin{equation}
+S^{(2)}_{p,n}
+= S^{(1)}_{p,n}
+- \frac{1}{4} \sum_{n'} S^{(1)}_{p,n'}.
+\end{equation}
+
+The resulting map $S^{(2)} \in \mathbb{R}^{L_{\max} \times 4}$ was saved per (isotype, domain).
+
+Before rendering, a second normalization was applied: the mean of all saved ISM maps for the same domain (across all isotypes) was subtracted from each map. This removes any domain-level positional biases shared across isotypes, leaving only isotype-specific signal.
+
+Positions with $\lVert \mathbf{s}_p \rVert_2 < 0.002$ were excluded. Anticodon positions (Sprinzl 34--36) and 3$'$-CCA positions (73--76) were masked from the active set, although anticodon columns are retained as a grayed-out gap for positional reference. For each remaining position, the signed logo convention was applied: the nucleotide with the highest positive $S^{(2)}_{p,n}$ was drawn above the baseline scaled by its value; the nucleotide with the most negative $S^{(2)}_{p,n}$ was drawn below. Logos were rendered using Logomaker with the classic RNA color scheme. The $x$-axis labels follow Sprinzl coordinates, derived from the modal secondary structure of sequences in each (isotype, domain) group. The $y$-axis reports mean ISM $\Delta$logit (row-centered, cross-isotype normalized).
+
+Unlike gradient $\times$ input or attention-based attribution, ISM evaluates the exact forward-pass output at each single-nucleotide perturbation. It makes no linear approximation and is model-architecture-agnostic, at the cost of $O(4L)$ forward passes per sequence.
+
+\subsection{ISM-Based Identity Element Attribution}
+
+For each (isotype $\times$ domain) combination, ISM attribution maps were computed using the trained GCN and the RiNALMo foundation model. The full dataset was split using stratified shuffle sampling (80\% train / 20\% test). From the held-out test partition, up to 100 sequences belonging to the target (isotype, domain) group were sampled without replacement.
+
+For each sequence $s$ of length $L$, the wildtype embedding was computed by passing $s$ through RiNALMo and extracting per-position representations at token positions $1$ through $L$ (excluding the [CLS] token), zero-padded to $L_{\max}$. The GCN was then applied using a symmetrically normalized adjacency matrix encoding backbone connectivity and predicted Watson--Crick--Franklin base pairs (with variable loops longer than 5 nt fully disconnected). This produced a wildtype logit vector $\mathbf{z}^{\mathrm{wt}} \in \mathbb{R}^{n_{\mathrm{classes}}}$.
+
+For each sequence position $p \in \{0, \ldots, L-1\}$ and each nucleotide $n \in \{\mathrm{A}, \mathrm{C}, \mathrm{G}, \mathrm{T}\}$, a single-character substitution was made at position $p$, yielding a mutant sequence. Mutants were re-embedded with RiNALMo and re-classified using the same adjacency matrix as the wildtype (i.e., secondary structure is held fixed across mutations). The raw attribution for each $(p,n)$ mutation was computed as:
+
+\begin{equation}
+\Delta \mathrm{logit}(p,n,c)
+= z^{\mathrm{mut}}_{c} - z^{\mathrm{wt}}_{c},
+\quad \forall c \in \{1, \ldots, n_{\mathrm{classes}}\}.
+\end{equation}
+
+This yields a per-sequence ISM tensor of shape $(L_{\max}, 4, n_{\mathrm{classes}})$. ISM tensors were accumulated and averaged over all $N \leq 100$ sequences, producing
+\[
+\overline{\Delta \mathrm{logit}} \in \mathbb{R}^{L_{\max} \times 4 \times n_{\mathrm{classes}}}.
+\]
+
+To isolate signal specific to the target isotype $k$, the target-class slice was extracted and the mean attribution over all other classes was subtracted:
+
+\begin{equation}
+S^{(1)}_{p,n}
+= \overline{\Delta \mathrm{logit}}_{p,n,k}
+- \frac{1}{n_{\mathrm{classes}} - 1}
+\sum_{c \neq k} \overline{\Delta \mathrm{logit}}_{p,n,c}.
+\end{equation}
+
+Each position was then row-centered by subtracting the mean over the four nucleotides:
+
+\begin{equation}
+S^{(2)}_{p,n}
+= S^{(1)}_{p,n}
+- \frac{1}{4} \sum_{n'} S^{(1)}_{p,n'}.
+\end{equation}
+
+
+The resulting map $S^{(2)} \in \mathbb{R}^{L_{\max} \times 4}$ was saved per (isotype, domain).
+
+Before rendering, a second normalization was applied: the mean of all saved ISM maps for the same domain (across all isotypes) was subtracted from each map. This removes any domain-level positional biases shared across isotypes, leaving only isotype-specific signal.
+
+Positions with $\lVert \mathbf{s}_p \rVert_2 < 0.002$ were excluded. Anticodon positions (Sprinzl 34--36) and 3$'$-CCA positions (73--76) were masked from the active set, though anticodon columns are retained as a grayed-out gap for positional reference. For each remaining position, the signed logo convention was applied: the nucleotide with the highest positive $S^{(2)}_{p,n}$ was drawn above the baseline scaled by its value; the nucleotide with the most negative $S^{(2)}_{p,n}$ was drawn below. Logos were rendered using Logomaker with the classic RNA color scheme. The $x$-axis labels follow Sprinzl coordinates, derived from the modal secondary structure of sequences in each (isotype, domain) group. The $y$-axis reports mean ISM $\Delta$logit (row-centered, cross-isotype normalized).
+
+Unlike gradient $\times$ input or attention-based attribution, ISM evaluates the exact forward-pass output at each single-nucleotide perturbation. It makes no linear approximation and is model-architecture-agnostic, at the cost of $O(4L)$ forward passes per sequence.
+
+\section{Results}
+
+\subsection{Dataset redundancy and deduplication}
+
+The final tRNA dataset contained 6,068,145 tRNA records from 142,794 genomes and 2,747,054 contigs (Figure~\ref{fig:dedup_overview}). Deduplication substantially reduced the number of tRNA records, from 6.07 million to 1.92 million, corresponding to a 68.4\% reduction. This reduction was not driven by loss of genome coverage: the number of represented genomes changed only slightly, from 142,794 to approximately 140,700 genomes, retaining 98.5\% of genomes. In contrast, the number of represented contigs decreased by 56.0\%, and the number of unique sequences decreased by 8.3\%, indicating that much of the redundancy was concentrated in repeated or closely related tRNA records rather than in wholesale removal of taxa.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{fig2thesis.png}
+  \caption{\textbf{tRNA secondary and tertiary structure.} (A) Cloverleaf secondary structure showing the canonical domain organization and Sprinzl numbering system; conserved nucleotides are explicitly indicated, Watson–Crick–Franklin base pairs (including G·U wobble pairs) are marked with a dot. (B) Three-dimensional structure of tRNA-Phe (PDB: 1EHZ) illustrating the L-shaped architecture that positions the acceptor arm and anticodon arm at opposite ends of the molecule; colors correspond to structural domains as in (A)3.}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{embeddingchoice.png}
+  \caption{\textbf{tRNA secondary and tertiary structure.} (A) Cloverleaf secondary structure showing the canonical domain organization and Sprinzl numbering system; conserved nucleotides are explicitly indicated, Watson–Crick–Franklin base pairs (including G·U wobble pairs) are marked with a dot. (B) Three-dimensional structure of tRNA-Phe (PDB: 1EHZ) illustrating the L-shaped architecture that positions the acceptor arm and anticodon arm at opposite ends of the molecule; colors correspond to structural domains as in (A)3.}
+\end{figure}
+
+To assess whether redundancy inflated classifier performance, I trained the anticodon-masked RiNALMo softmax classifier across progressively stricter taxonomic deduplication levels (Figure~\ref{fig:dedup_accuracy}). Without deduplication, the classifier reached 97.8\% test accuracy. Species-level deduplication had little effect, reducing accuracy only slightly to 97.5\%, despite reducing the classification-ready dataset from 5.18 million to 4.75 million rows. Stronger deduplication caused a larger decline: genus-level deduplication reduced the dataset to 2.26 million rows and accuracy to 95.8\%. Accuracy then plateaued under stricter family-, order-, class-, phylum-, and domain-level deduplication, remaining near 94.4--94.9\%.
+
+These results show that the raw dataset contains substantial phylogenetic and sequence redundancy, but that most of the apparent inflation in classifier performance is removed by genus-level deduplication. The persistence of high accuracy after anticodon masking and aggressive deduplication suggests that RiNALMo embeddings retain strong isotype-discriminative information outside the anticodon itself, while the decline from 97.8\% to approximately 94--95\% indicates that some performance in the undeduplicated setting reflects repeated or closely related examples shared across train and test splits.
+
+\begin{table}[h]
+\centering
+\caption{Five most divergent tRNA identity element embedding pairs across all culturable genomes (22 isotypes, mean cosine similarity).}
+\label{tab:most_divergent_pairs}
+\begin{tabular}{llll r}
+\toprule
+\textbf{Order A} & \textbf{Domain A} & \textbf{Order B} & \textbf{Domain B} & \textbf{Mean cosine sim.} \\
+\midrule
+  Methanococcales & Archaea & Actinomycetales & Bacteria & -0.329 \\
+  Methanococcales & Archaea & Pseudomonadales & Bacteria & -0.320 \\
+  Archaeoglobales & Archaea & Actinomycetales & Bacteria & -0.318 \\
+  Archaeoglobales & Archaea & Pseudomonadales & Bacteria & -0.315 \\
+  Thermoplasmatales & Archaea & Actinomycetales & Bacteria & -0.313 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\caption{Five taxonomic orders with the most divergent tRNA identity element embeddings relative to \textit{Escherichia coli} (mean cosine similarity across isotypes).}
+\label{tab:ecoli_most_divergent}
+\begin{tabular}{ll r}
+\toprule
+\textbf{Order} & \textbf{Domain} & \textbf{Mean cosine sim.} \\
+\midrule
+  Actinomycetales & Bacteria & -0.336 \\
+  Pseudomonadales & Bacteria & -0.334 \\
+  Enterobacterales & Bacteria & -0.299 \\
+  Lactobacillales & Bacteria & -0.213 \\
+  Sphingomonadales & Bacteria & -0.198 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Discussion}
+
+
+\section{Conclusion}
+
+In summary, we have demonstrated that:
+\begin{enumerate}
+    \item A linear classifier trained on RiNALMo embeddings classifies bacterial and archaeal tRNA isotypes with 97.2\% accuracy, substantially outperforming both RNA-FM-based classifiers and raw-sequence models at matched data scales.
+    \item After masking the anticodon, accuracy remains high (94.6\% in bacteria), confirming that the tRNA body carries distributed identity information accessible to the foundation model.
+    \item Per-class accuracy patterns after masking closely recapitulate the known biochemistry of aaRS–tRNA recognition, providing a data-driven validation that the model has learned genuine identity element signals.
+    \item Accuracy varies substantially across the prokaryotic tree, with Actinomycetota, Asgardarchaeota, and some Acidobacteriota lineages showing systematically lower accuracy, identifying candidate lineages for lineage-specific identity element remodelling.
+    \item The GNN architecture achieves the best balance of classification accuracy and identity element interpretability in bacteria, as measured by the IE score.
+    \item Gradient projection onto nucleotide embedding vectors produces interpretable per-position, per-nucleotide attribution scores that recover established identity elements and reveal lineage-specific variation at the bacterial order level.
+\end{enumerate}
+Together these findings establish a foundation for a systematic, comparative genomics-scale analysis of tRNA identity element evolution across prokaryotic diversity.
+
+
+
+
+\end{document}
