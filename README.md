@@ -1,8 +1,7 @@
 # DIGtRNA: Discriminative element Identification via GCN for tRNAs
 
-**Roma Nagle · UC Berkeley · 2026**
 
-DIGtRNA is a genome-scale deep learning pipeline for discovering tRNA identity elements — the sequence and structural features that govern aminoacyl-tRNA synthetase recognition. It trains a graph convolutional network (GCN) on frozen RiNALMo embeddings from 855,166 deduplicated prokaryotic tRNA sequences, then uses in silico mutagenesis (ISM) to generate signed sequence logos that identify which nucleotide positions drive isotype-specific classification. Logos are reported in the Sprinzl coordinate system, stratified by domain (Bacteria / Archaea) and optionally by taxonomic order.
+DIGtRNA is a genome-scale deep learning pipeline for discovering tRNA identity elements: the sequence and structural features that govern aminoacyl-tRNA synthetase recognition. It trains a graph convolutional network (GCN) on frozen RiNALMo embeddings from 855,166 deduplicated prokaryotic tRNA sequences, then uses in silico mutagenesis (ISM) to generate signed sequence logos that identify which nucleotide positions drive isotype-specific classification. Logos are reported in the Sprinzl coordinate system, stratified by domain (Bacteria / Archaea) and optionally by taxonomic order.
 
 ## Overview
 
